@@ -6,6 +6,7 @@
         "dev": "netlify dev"
     },
     "dependencies": {
+        "formidable": "^3.5.2",
         "groq-sdk": "^0.15.0"
     },
     "devDependencies": {

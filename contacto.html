@@ -5,12 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | PsicologIA - Asistente de Psicología con Inteligencia Artificial</title>
-  <meta name="description" content="Contacta con el equipo de PsicologIA. Resuelve tus dudas sobre nuestro asistente virtual de psicología impulsado por inteligencia artificial.">
-  <meta name="keywords" content="Contacto PsicologIA, Soporte PsicologIA, Ayuda psicología online, Contactar asistente psicológico">
+  <meta name="description"
+    content="Contacta con el equipo de PsicologIA. Resuelve tus dudas sobre nuestro asistente virtual de psicología impulsado por inteligencia artificial.">
+  <meta name="keywords"
+    content="Contacto PsicologIA, Soporte PsicologIA, Ayuda psicología online, Contactar asistente psicológico">
   <meta name="author" content="PsicologIA">
   <meta name="robots" content="index, follow">
   <link rel="shortcut icon" href="img/PsicologIA-logo-removebg.webp" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-form {
+  max-width: 500px; /* Define un ancho máximo para el formulario */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 20px; /* Agrega un poco de espacio interior */
+  background-color: white; /* Asegura el fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+  text-align: center; /* Centra el contenido */
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px; /* Espaciado entre grupos */
+  text-align: left; /* Alinea etiquetas y campos */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* Ancho completo */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
 </head>
 
 <body>
@@ -31,38 +73,39 @@
   <main>
     <section class="contact-section">
       <h2>Ponte en contacto con nosotros</h2>
-      <p>Si tienes alguna pregunta, sugerencia o comentario sobre PsicologIA, no dudes en ponerte en contacto con nuestro equipo. Estaremos encantados de ayudarte.</p>
+      <p>Si tienes alguna pregunta, sugerencia o comentario sobre PsicologIA, no dudes en ponerte en contacto con
+        nuestro equipo. Estaremos encantados de ayudarte.</p>
+      <div class="before-contact">
+        <div class="contact-form">
+          <h3>Formulario de contacto</h3>
+          <form id="contactForm" action="/.netlify/functions/contact" method="POST">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" required>
+            </div>
 
-      <div class="contact-form">
-        <h3>Formulario de contacto</h3>
-        <form id="contactForm" action="/.netlify/functions/contact" method="POST">
-          <div class="form-group">
-            <label for="name">Nombre completo</label>
-            <input type="text" id="name" name="name" required>
-          </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" required>
+            </div>
 
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
 
-          <div class="form-group">
-            <label for="subject">Asunto</label>
-            <input type="text" id="subject" name="subject" required>
-          </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
 
-          <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="privacy" name="privacy" required> <label for="privacy">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a></label>
+            </div>
 
-          <div class="form-group checkbox-group">
-            <input type="checkbox" id="privacy" name="privacy" required>
-            <label for="privacy">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a></label>
-          </div>
-
-          <button type="submit" class="submit-btn">Enviar mensaje</button>
-        </form>
+            <button type="submit" class="submit-btn">Enviar mensaje</button>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -76,37 +119,41 @@
 
       <div class="faq-item">
         <h3>¿Es seguro usar PsicologIA?</h3>
-        <p>Sí, todas las conversaciones son privadas y no se almacenan de forma permanente. Tu información se elimina cuando cierras  o recargas la página.</p>
+        <p>Sí, todas las conversaciones son privadas y no se almacenan de forma permanente. Tu información se elimina
+          cuando cierras o recargas la página.</p>
       </div>
 
       <div class="faq-item">
         <h3>¿Puede PsicologIA sustituir a un terapeuta real?</h3>
-        <p>No, PsicologIA está diseñado como un complemento y primer punto de apoyo, pero no sustituye la atención profesional de un psicólogo o terapeuta licenciado.</p>
+        <p>No, PsicologIA está diseñado como un complemento y primer punto de apoyo, pero no sustituye la atención
+          profesional de un psicólogo o terapeuta licenciado.</p>
       </div>
 
       <div class="faq-item">
         <h3>¿Qué tipo de problemas puede ayudarme a resolver?</h3>
-        <p>PsicologIA puede ofrecer apoyo inicial en situaciones de estrés, ansiedad leve, problemas de sueño, técnicas de mindfulness, gestión emocional y orientación sobre hábitos saludables.</p>
+        <p>PsicologIA puede ofrecer apoyo inicial en situaciones de estrés, ansiedad leve, problemas de sueño, técnicas
+          de mindfulness, gestión emocional y orientación sobre hábitos saludables.</p>
       </div>
     </section>
-    
+
   </main>
 
   <footer>
     <p>PsicologIA © 2025 | Impulsado por Llama3-70b-8192 de Groq</p>
-    <p>Esta herramienta no sustituye la atención profesional. Busca ayuda especializada si experimentas problemas emocionales graves.</p>
+    <p>Esta herramienta no sustituye la atención profesional. Busca ayuda especializada si experimentas problemas
+      emocionales graves.</p>
     <nav aria-label="Enlaces de pie de página">
-      <a href="/privacidad.html">Política de Privacidad</a> | 
-      <a href="/terminos.html">Términos de Uso</a> | 
+      <a href="/privacidad.html">Política de Privacidad</a> |
+      <a href="/terminos.html">Términos de Uso</a> |
       <a href="/contacto.html">Contacto</a>
     </nav>
   </footer>
 
   <script>
     // Script para manejar el envío del formulario
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       // Aquí iría la lógica para enviar el formulario
       // Por ahora, solo mostraremos un mensaje de confirmación
       alert('Gracias por tu mensaje. Te responderemos lo antes posible.');
