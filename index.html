@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords"
+    content="Psicología, IA, Inteligencia Emocional, Salud Mental, Bienestar, Terapia, Apoyo Psicológico, Psicoterapia, Gratis">
+    <meta name="description" content="Un Psicologo impulsado por IA para ayudarte a resolver tus problemas emocionales">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsicoAI - Asistente de Psicología</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>PsicoAI</h1>
+    <div class="subtitle">Tu asistente de psicología con inteligencia artificial</div>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h2>Bienvenido a PsicoAI</h2>
+      <p>Esta aplicación utiliza inteligencia artificial (Llama3-70b-8192 de Groq) para proporcionar orientación
+        psicológica inicial. Escribe tus preguntas o preocupaciones para recibir apoyo. Recuerda que esta herramienta no
+        sustituye la atención profesional.</p>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-messages">
+        <div class="messages-container" id="messages-container">
+          <div class="message ai-message">
+            Hola, soy PsicoAI. Estoy aquí para escucharte y brindarte apoyo desde una perspectiva psicológica. ¿En qué
+            puedo ayudarte hoy?
+          </div>
+        </div>
+        <div class="thinking" id="thinking">
+          Pensando<div class="dot-flashing"></div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+        <button id="send-btn">Enviar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>PsicoAI © 2025 | Impulsado por Llama3-70b-8192 de Groq</p>
+  </footer>
+
+  <script>
+    // Elementos del DOM
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    const messagesContainer = document.getElementById('messages-container');
+    const thinkingIndicator = document.getElementById('thinking');
+
+    // Evento para enviar mensaje con Enter
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Evento para enviar mensaje con botón
+    sendBtn.addEventListener('click', sendMessage);
+
+    // Función para enviar mensaje
+    function sendMessage() {
+      const message = userInput.value.trim();
+
+      if (message === '') return;
+
+      // Añadir mensaje del usuario a la interfaz
+      addMessage(message, 'user');
+
+      // Limpiar input
+      userInput.value = '';
+
+      // Mostrar indicador "pensando"
+      thinkingIndicator.style.display = 'flex';
+
+      // Llamar a la función Netlify
+      fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error en la respuesta');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Ocultar indicador "pensando"
+          thinkingIndicator.style.display = 'none';
+
+          // Añadir respuesta de la IA
+          addMessage(data.response, 'ai');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          thinkingIndicator.style.display = 'none';
+          addMessage('Lo siento, ha ocurrido un error. Por favor, intenta de nuevo más tarde.', 'ai');
+        });
+    }
+
+    // Función para añadir mensajes a la interfaz
+    function addMessage(content, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+      messageElement.textContent = content;
+
+      messagesContainer.appendChild(messageElement);
+
+      // Auto-scroll al último mensaje
+      const chatMessages = document.querySelector('.chat-messages');
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  </script>
+</body>
+
+</html>

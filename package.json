@@ -1,0 +1,14 @@
+{
+    "name": "psicologia",
+    "version": "1.0.0",
+    "description": "Aplicación web de psicología impulsada por IA de Groq para Netlify",
+    "scripts": {
+        "dev": "netlify dev"
+    },
+    "dependencies": {
+        "groq-sdk": "^0.15.0"
+    },
+    "devDependencies": {
+        "netlify-cli": "^16.5.1"
+    }
+}
