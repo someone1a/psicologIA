@@ -28,7 +28,7 @@ exports.handler = async function(event, context) {
 
     // Prompt base para psicología
     const basePrompt = `
-    Eres un asistente psicológico AI llamado PsicoAI, entrenado para brindar apoyo emocional y orientación inicial.
+    Eres un asistente psicológico AI llamado PsicologIA, entrenado para brindar apoyo emocional y orientación inicial.
     
     Directrices importantes:
     - Proporcionar información precisa y basada en evidencia sobre la salud mental.
