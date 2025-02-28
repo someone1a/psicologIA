@@ -215,3 +215,180 @@
       max-width: 90%;
     }
   }
+  /* Estilos adicionales para las páginas legales y de contacto */
+
+/* Estilos generales para páginas legales */
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.legal-section {
+  margin-bottom: 30px;
+}
+
+.legal-section h3 {
+  color: #444;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.legal-section ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.legal-section li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.highlight-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #5d87ff;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
+
+.highlight-box strong {
+  color: #3a64d8;
+}
+
+/* Estilos para página de contacto */
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.contact-item {
+  flex: 1;
+  min-width: 250px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #3a64d8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+}
+
+.submit-btn {
+  background-color: #3a64d8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #2a4fb8;
+}
+
+/* Estilos para FAQ */
+.faq-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.faq-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.resources-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f4ff;
+  border-radius: 8px;
+}
+
+.resources-section ul {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.resources-section li {
+  margin-bottom: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+  
+  .contact-item {
+    min-width: 100%;
+  }
+}
