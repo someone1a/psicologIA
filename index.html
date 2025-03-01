@@ -98,7 +98,7 @@
           </div>
         </div>
         <div class="thinking" id="thinking">
-          Pensando<div class="dot-flashing"></div>
+          Pensando <div class="dot-flashing"></div>
         </div>
       </div>
       <div class="chat-input">
@@ -112,7 +112,9 @@
       <h2>¿Necesitas ayuda profesional?</h2>
       <p>Recuerda que PsicologIA es una herramienta de apoyo inicial. Si estás experimentando dificultades emocionales graves, te recomendamos contactar con un profesional de la salud mental.</p>
       <ul>
-        <li>Línea de Atención a asistencia al Suicida: <strong>011 4962-0660</strong> (Argentina)</li>
+        <li>Sedronar: <strong><a href="tel:141">141</a></strong> (Argentina)</li>
+        <li>Línea de Atención a asistencia al Suicida: <strong><a href="tel:+54901149620660">011 4962-0660</a></strong> (Argentina)</li>
+        <li>Direccion de salud Mental de la nacion: <strong><a href="tel:08003331665">0800-333-1665</a></strong></li>
         
       </ul>
     </section>
@@ -126,8 +128,13 @@
       <a href="/terminos.html">Términos de Uso</a> | 
       <a href="/contacto.html">Contacto</a>
     </nav>
+    <div class="usefull-links">
+      <a href="https://github.com/someone1a/psicologIA"><i class="fa-brands fa-github"></i></a> <a
+        href="mailto:psicolog-IA.app@protonmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
   <script>
     // Elementos del DOM
     const userInput = document.getElementById('user-input');
@@ -178,7 +185,7 @@
           // Ocultar indicador "pensando"
           thinkingIndicator.style.display = 'none';
 
-          // Añadir respuesta de la IA
+          // Añadir respuesta de la IA - AHORA CON PROCESAMIENTO DE MARKDOWN
           addMessage(data.response, 'ai');
         })
         .catch(error => {
@@ -193,7 +200,16 @@
       const messageElement = document.createElement('div');
       messageElement.classList.add('message');
       messageElement.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
-      messageElement.textContent = content;
+      
+      // Si es un mensaje de la IA, procesamos el Markdown
+      if (sender === 'ai') {
+        // Convertir Markdown a HTML
+        const htmlContent = marked.parse(content);
+        messageElement.innerHTML = htmlContent;
+      } else {
+        // Si es mensaje del usuario, mantenerlo como texto plano
+        messageElement.textContent = content;
+      }
 
       messagesContainer.appendChild(messageElement);
 
@@ -202,6 +218,9 @@
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+  integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

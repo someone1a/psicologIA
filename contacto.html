@@ -12,47 +12,58 @@
   <meta name="author" content="PsicologIA">
   <meta name="robots" content="index, follow">
   <link rel="shortcut icon" href="img/PsicologIA-logo-removebg.webp" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
   <style>
     .contact-form {
-  max-width: 500px; /* Define un ancho máximo para el formulario */
-  margin: 0 auto; /* Centra horizontalmente */
-  padding: 20px; /* Agrega un poco de espacio interior */
-  background-color: white; /* Asegura el fondo blanco */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
-  text-align: center; /* Centra el contenido */
-}
+      max-width: 500px;
+      /* Define un ancho máximo para el formulario */
+      margin: 0 auto;
+      /* Centra horizontalmente */
+      padding: 20px;
+      /* Agrega un poco de espacio interior */
+      background-color: white;
+      /* Asegura el fondo blanco */
+      border-radius: 10px;
+      /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Sombra para resaltar */
+      text-align: center;
+      /* Centra el contenido */
+    }
 
-.contact-form .form-group {
-  margin-bottom: 15px; /* Espaciado entre grupos */
-  text-align: left; /* Alinea etiquetas y campos */
-}
+    .contact-form .form-group {
+      margin-bottom: 15px;
+      /* Espaciado entre grupos */
+      text-align: left;
+      /* Alinea etiquetas y campos */
+    }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%; /* Ancho completo */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      /* Ancho completo */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-.contact-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff; /* Azul */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
+    .contact-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      /* Azul */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-.contact-form button:hover {
-  background-color: #0056b3;
-}
-
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+    
   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -74,7 +85,9 @@
     <section class="contact-section">
       <h2>Ponte en contacto con nosotros</h2>
       <p>Si tienes alguna pregunta, sugerencia o comentario sobre PsicologIA, no dudes en ponerte en contacto con
-        nuestro equipo. Estaremos encantados de ayudarte.</p>
+        nuestro equipo. Estaremos encantados de ayudarte. Para ello tienes dos maneras: A traves de nuestro <a
+          href="mailto:psicolog-IA.app@protonmail.com">Mail (haz click aqui para obtenerlo)</a> o llenando el siguiente
+        formulario:</p>
       <div class="before-contact">
         <div class="contact-form">
           <h3>Formulario de contacto</h3>
@@ -100,7 +113,8 @@
             </div>
 
             <div class="form-group checkbox-group">
-              <input type="checkbox" id="privacy" name="privacy" required> <label for="privacy">He leído y acepto la <a href="privacidad.html">Política de Privacidad</a></label>
+              <input type="checkbox" id="privacy" name="privacy" required> <label for="privacy">He leído y acepto la <a
+                  href="privacidad.html">Política de Privacidad</a></label>
             </div>
 
             <button type="submit" class="submit-btn">Enviar mensaje</button>
@@ -147,6 +161,11 @@
       <a href="/terminos.html">Términos de Uso</a> |
       <a href="/contacto.html">Contacto</a>
     </nav>
+    <br>
+    <div class="usefull-links">
+      <a href="https://github.com/someone1a/psicologIA"><i class="fa-brands fa-github"></i></a> <a
+        href="mailto:psicolog-IA.app@protonmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </footer>
 
   <script>
@@ -160,6 +179,9 @@
       this.reset();
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+  integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
