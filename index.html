@@ -89,8 +89,13 @@
       </ul>
     </section>
 
-    <section class="chat-container">
-      <h2>Conversa con PsicologIA</h2>
+    <section class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <h2>Conversa con PsicologIA</h2>
+        <button id="fullscreen-btn" class="fullscreen-btn" aria-label="Expandir/Contraer chat">
+          <i class="fa-solid fa-expand" id="fullscreen-icon"></i>
+        </button>
+      </div>
       <div class="chat-messages">
         <div class="messages-container" id="messages-container">
           <div class="message ai-message">
@@ -105,7 +110,6 @@
         <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí..." aria-label="Mensaje para PsicologIA">
         <button id="send-btn" aria-label="Enviar mensaje">Enviar</button>
       </div>
-
     </section>
 
     <section id="contacto">
@@ -135,6 +139,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+  <script src="scripts/fullscreen.js"></script>
   <script>
     // Elementos del DOM
     const userInput = document.getElementById('user-input');
